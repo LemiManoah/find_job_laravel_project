@@ -17,5 +17,9 @@ class Job extends Model
     public function employer(){
         return $this->belongsTo('App\Models\Employer');
     }
+
+    public function tags(){
+        return $this->belongsToMany('App\Models\Tag', foreignPivotKey: 'job_listing_id');
+    }
     
 }
